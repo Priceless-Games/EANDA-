@@ -4,47 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loading...</title>
-    <style>
-        /* Fullscreen Background */
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background: url('https://i.ibb.co/yfh2pfg/IMG-3057.jpg') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        /* Loading Image */
-        .loading-icon {
-            width: 100px; /* Adjust the size of the loading icon */
-            height: 100px;
-            animation: spin 1s linear infinite; /* Spinning animation */
-        }
-
-        /* Spin Animation */
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
     <script>
-        // Redirect to the specified website after 3 seconds
-        setTimeout(() => {
-            window.location.href = "https://selar.co/m/eanda"; // Replace with your desired URL
-        }, 3000);
+        function startSequence() {
+            // After 3 seconds, show the semitransparent black page and loading icon
+            setTimeout(() => {
+                document.querySelector('.overlay').classList.add('show');
+            }, 3000);
+
+            // After 4.5 seconds (3s + 1.5s), redirect to the final link
+            setTimeout(() => {
+                window.location.href = "https://selar.co/m/eanda"; // Redirect link
+            }, 4500);
+        }
     </script>
 </head>
-<body>
-    <!-- Loading Icon -->
-    <img src="https://i.ibb.co/drqWW2B/10991922-4978-4-ABB-A05-E-4-AB911391431.png" 
-         alt="Loading" 
-         class="loading-icon">
+<body onload="startSequence()">
+    <!-- Initial Page with Background Image -->
+    <div class="initial-page"></div>
+
+    <!-- Semitransparent Black Page -->
+    <div class="overlay">
+        <img src="https://i.ibb.co/yFq08ZR/B125-D31-C-3-A4-D-4-D2-A-AE6-A-C4-F00-EF5-B141.png" 
+             alt="Loading Icon" 
+             class="loading-icon">
+    </div>
 </body>
 </html>
