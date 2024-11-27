@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        /* Fullscreen Background */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('https://i.ibb.co/yfh2pfg/IMG-3057.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Loading Image */
+        .loading-icon {
+            width: 100px; /* Adjust the size of the loading icon */
+            height: 100px;
+            animation: spin 1s linear infinite; /* Spinning animation */
+        }
+
+        /* Spin Animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script>
+        // Redirect to the specified website after 3 seconds
+        setTimeout(() => {
+            window.location.href = "https://example.com"; // Replace with your desired URL
+        }, 3000);
+    </script>
+</head>
+<body>
+    <!-- Loading Icon -->
+    <img src="https://i.ibb.co/drqWW2B/10991922-4978-4-ABB-A05-E-4-AB911391431.png" 
+         alt="Loading" 
+         class="loading-icon">
+</body>
+</html>
